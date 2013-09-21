@@ -14,4 +14,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    
+
+	#Custom URL definitions for each application:
+	url(r'^blog/', include('nanoblog.urls'))
 )
