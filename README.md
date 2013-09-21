@@ -11,7 +11,8 @@ Requirements:
  * Personal Link collection to my other services - Public
  * Quick Notes, twitter-like - Hidden but shareable
  * Todo's - Private
- * Uses YoBooter -> Angularjs + CodeIgniter for Backend
+ * Uses Django 1.5 for backend
+ * Uses AngularJS for front-end
  * Local SQLite to store everything.
 
 Structure of Database:
