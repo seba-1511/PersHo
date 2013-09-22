@@ -2,7 +2,9 @@
 # Create your views here.
 
 from django.http import HttpResponse, Http404
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
+
+from datetime import datetime
 
 
 def home(request):
@@ -17,5 +19,9 @@ def p(request, post_id):
     return HttpResponse(response)
 
 
-def notFound():
+def notFound(request):
     raise Http404
+
+
+def template(request):
+    return render(request, 'tpl.html', {'actual_time': datetime.now()})
