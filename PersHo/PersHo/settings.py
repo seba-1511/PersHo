@@ -35,7 +35,7 @@ TIME_ZONE = 'Europe/Paris'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'fr-FR'
+LANGUAGE_CODE = 'en-US'
 
 SITE_ID = 1
 
@@ -71,7 +71,10 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/opt/lampp/htdocs/PersHo/PersHo/static/'
+    '/opt/lampp/htdocs/PersHo/PersHo/static/images/',
+    '/opt/lampp/htdocs/PersHo/PersHo/static/js/',
+    '/opt/lampp/htdocs/PersHo/PersHo/static/css/',
+    '/opt/lampp/htdocs/PersHo/PersHo/static/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
