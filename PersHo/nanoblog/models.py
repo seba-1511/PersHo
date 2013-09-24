@@ -8,8 +8,7 @@ class Post(models.Model):
     content = models.TextField(null=True)
     date = models.DateTimeField(
         auto_now_add=True,
-        auto_now=False,
-        verbose_name='Publication Date'
+        auto_now=False
     )
 
     def __unicode__(self):

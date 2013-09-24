@@ -20,7 +20,7 @@ urlpatterns = patterns(
 
     url(
         r'^$',
-        views.home
+        views.home #delete import whan changing this
     ),
     url(
         r'^b/',

@@ -1,26 +1,31 @@
 from django.conf.urls import patterns, url
 
-from nanoblog import views
+from nanolinks import views
 
 urlpatterns = patterns(
-    'nanoblog.views',
+    'nanolinks.views',
     url(
-    	regex = r'^$',
-    	view = 'home',
-    	name = 'basic_urls',
-    	),
+        regex=r'^$',
+        view='home',
+        name='basic_urls',
+    ),
+
+    url(
+        regex=r'^links$',
+        view='links_list',
+        name='basic_urls',
+    ),
 
     # REST API urls
     url(
         regex=r'^api/$',
-        view=views.PostCreateReadView.as_view(),
-        name='post_rest_api',
+        view=views.LinkCreateReadView.as_view(),
+        name='links_rest_api',
     ),
 
     url(
         regex=r'^api/(?P<post_id>[-\w]+)/$',
-        view=views.PostReadUpdateDeleteView.as_view(),
-        name='post_rest_api',
+        view=views.LinkReadUpdateDeleteView.as_view(),
+        name='links_rest_api',
     ),
-
 )
