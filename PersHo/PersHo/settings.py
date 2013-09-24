@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 # Django settings for PersHo project.
 
 DEBUG = True
@@ -5,7 +6,7 @@ TEMPLATE_DEBUG = DEBUG
 APPEND_SLASH = True
 
 ADMINS = (
-    ('Sébastien Arnold', 'seba-1511@hotmail.com'),
+    ('Sebastien Arnold', 'seba-1511@hotmail.com'),
     # ('Your Name', 'your_email@example.com'),
 )
 
