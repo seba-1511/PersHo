@@ -6,7 +6,6 @@ from nanoblog.models import Post
 
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('title', 'date')
-	list_filter = ('category', )
 	date_hierarchy = 'date'
 	ordering = ('date',)
 	search_fields = ('title', 'content')

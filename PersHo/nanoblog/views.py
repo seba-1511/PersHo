@@ -1,12 +1,16 @@
 #-*- coding: utf-8 -*-
 # Create your views here.
 
-from django.http import HttpResponse, Http404
-from django.shortcuts import redirect, render
-
 from datetime import datetime
 
+from django.http import HttpResponse, Http404
+from django.shortcuts import redirect, render
+from django.core.serializers import serialize
+
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+
 from nanoblog.forms import ContactForm
+from nanoblog.models import Post
 
 
 def home(request):
@@ -17,7 +21,8 @@ def home(request):
 def p(request, post_id):
     if int(post_id) > 1000:
         return notFound()
-    response = 'You asked for article number:' + post_id
+    post = Post.objects.all().order_by('date', 'title').reverse()
+    response = serialize('json', post[:20])
     return HttpResponse(response)
 
 
@@ -51,3 +56,14 @@ def contact(request):
         form = ContactForm()  # Nous créons un formulaire vide
 
     return render(request, 'contact.html', locals())
+
+    def posts(request):
+        return false
+
+
+class PostCreateReadView(ListCreateAPIView):
+    model = Post
+
+    
+class PostReadUpdateDeleteView(RetrieveUpdateDestroyAPIView):
+    model = Post
