@@ -2,27 +2,23 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
-APPEND_SLASH = True  # Ajoute un slash en fin d'URL
+APPEND_SLASH = True
 
 ADMINS = (
-    ('Sebastien Arnold', 'seba-1511@hotmail.com'),
+    ('Sébastien Arnold', 'seba-1511@hotmail.com'),
+    # ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'ENGINE': 'django.db.backends.sqlite3',
-        # Or path to database file if using sqlite3.
-        'NAME': 'database.sql',
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'database.sql',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
-        # Empty for localhost through domain sockets or '127.0.0.1' for
-        # localhost through TCP.
-        'HOST': '',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
@@ -39,7 +35,7 @@ TIME_ZONE = 'Europe/Paris'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-US'
+LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
@@ -75,10 +71,9 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/opt/lampp/htdocs/PersHo/PersHo/static/images/',
-    '/opt/lampp/htdocs/PersHo/PersHo/static/js/',
-    '/opt/lampp/htdocs/PersHo/PersHo/static/css/',
     '/opt/lampp/htdocs/PersHo/PersHo/static/',
+    '/opt/lampp/htdocs/PersHo/PersHo/nanoblog/static/',
+    '/opt/lampp/htdocs/PersHo/PersHo/nanolinks/static/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -89,17 +84,17 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '9eo(a=-%wtdjb2x*y1*#qt090lx54v5+i!(9_&x%g7_hr!2s^k'
+SECRET_KEY = '&e4yhwl6t-%ej4ubahu&!c6ua*1x1n76q4t_6@nq39^*qoy7e$'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    #     'django.template.loaders.eggs.Loader',
+#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,11 +113,12 @@ ROOT_URLCONF = 'PersHo.urls'
 WSGI_APPLICATION = 'PersHo.wsgi.application'
 
 TEMPLATE_DIRS = (
+    '/opt/lampp/htdocs/PersHo/PersHo/templates',
+    '/opt/lampp/htdocs/PersHo/PersHo/nanoblog/templates',
+    '/opt/lampp/htdocs/PersHo/PersHo/nanolinks/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/opt/lampp/htdocs/PersHo/PersHo/templates/',
-    '/opt/lampp/htdocs/PersHo/PersHo/nanoblog/templates/',
 )
 
 INSTALLED_APPS = (
@@ -132,12 +128,13 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'nanolinks',
+    'nanoblog',
     # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'rest_framework',
-    'nanoblog',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
