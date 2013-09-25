@@ -10,6 +10,12 @@ urlpatterns = patterns(
     	name = 'basic_urls',
     	),
 
+    url(
+    	regex = r'^latest$',
+    	view = 'latest_entries',
+    	name = 'basic_urls'
+    	),
+
     # REST API urls
     url(
         regex=r'^api/$',
@@ -18,7 +24,7 @@ urlpatterns = patterns(
     ),
 
     url(
-        regex=r'^api/(?P<post_id>[-\w]+)/$',
+        regex=r'^api/(?P<pk>[-\w]+)/$',
         view=views.PostReadUpdateDeleteView.as_view(),
         name='post_rest_api',
     ),

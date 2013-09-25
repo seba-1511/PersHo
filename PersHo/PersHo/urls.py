@@ -1,8 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from nanoblog import views
-
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -20,7 +18,7 @@ urlpatterns = patterns(
 
     url(
         r'^$',
-        views.home #delete import whan changing this
+        include('website.urls')
     ),
     url(
         r'^b/',
@@ -30,6 +28,10 @@ urlpatterns = patterns(
         r'^l/',
         include('nanolinks.urls')
     ),
+    url(
+        r'^login/',
+        include('login.urls')
+        )
 )
 
 # To serve static files. Only in dev mode, otherwise the webserver should

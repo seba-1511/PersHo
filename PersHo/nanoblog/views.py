@@ -1,10 +1,8 @@
 #-*- coding: utf-8 -*-
 
-# To Do:
-# - latest_entries: Make an API, but with many posts(~20) generated and printed as JSON.
-
 
 from django.http import HttpResponse, Http404
+from django.core.serializers import serialize
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 from nanoblog.models import Post
@@ -15,7 +13,8 @@ def home(request):
 
 
 def latest_entries(request):
-    return false
+	posts = Post.objects.all().order_by('date').reverse()[:20]
+	return HttpResponse(serialize('json', posts))
 
 
 class PostCreateReadView(ListCreateAPIView):
