@@ -1,6 +1,10 @@
 #-*- coding: utf-8 -*-
 # Django settings for PersHo project.
 
+import os
+
+CURRENT_DIR = os.path.abspath(os.curdir)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 APPEND_SLASH = True
@@ -14,12 +18,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'database.sql',                      # Or path to database file if using sqlite3.
+        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3',
+        # Or path to database file if using sqlite3.
+        'NAME': 'database.sql',
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        # Empty for localhost through domain sockets or '127.0.0.1' for
+        # localhost through TCP.
+        'HOST': '',
         'PORT': '',                      # Set to empty string for default.
     }
 }
@@ -72,9 +80,10 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/opt/lampp/htdocs/PersHo/PersHo/static/',
-    '/opt/lampp/htdocs/PersHo/PersHo/nanoblog/static/',
-    '/opt/lampp/htdocs/PersHo/PersHo/nanolinks/static/',
+    CURRENT_DIR + '/static/',
+    CURRENT_DIR + '/nanoblog/static/',
+    CURRENT_DIR + '/nanolinks/static/',
+    CURRENT_DIR + '/website/static/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -85,7 +94,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -95,7 +104,7 @@ SECRET_KEY = '&e4yhwl6t-%ej4ubahu&!c6ua*1x1n76q4t_6@nq39^*qoy7e$'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    #     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -114,9 +123,9 @@ ROOT_URLCONF = 'PersHo.urls'
 WSGI_APPLICATION = 'PersHo.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/opt/lampp/htdocs/PersHo/PersHo/templates',
-    '/opt/lampp/htdocs/PersHo/PersHo/nanoblog/templates',
-    '/opt/lampp/htdocs/PersHo/PersHo/nanolinks/templates',
+    CURRENT_DIR + '/website/templates',
+    CURRENT_DIR + '/nanoblog/templates',
+    CURRENT_DIR + '/nanolinks/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
