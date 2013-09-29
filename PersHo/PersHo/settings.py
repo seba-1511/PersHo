@@ -76,13 +76,10 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = '/website/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    CURRENT_DIR + '/static/',
-    CURRENT_DIR + '/nanoblog/static/',
-    CURRENT_DIR + '/nanolinks/static/',
     CURRENT_DIR + '/website/static/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
