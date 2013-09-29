@@ -11,15 +11,15 @@ blog.controller('AllPosts', function($scope, $location, $routeParams, PostModel)
 	$scope.posts = posts;
 	$scope.currentURL = window.location.href;
 
-	$scope.onDelete = function(postId) {
-		if (confirm('Are you sure you want to delete this post ?')) {
-			$location.path('/b/del/'+postId);
+	$scope.deletePost = function(postId) {
+		var q = confirm('Are you sure you want to delete this post ?');
+		if (q) {
+			PostModel.deletePost(postId);
 		}
 	};
 });
 
 blog.controller('OnePost', function($scope, $location, $routeParams, PostModel) {
-	debugger;
 	var post = PostModel.getPost($routeParams.postId);
 
 	$scope.post = post;

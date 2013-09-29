@@ -7,9 +7,9 @@
 
 			<a href="#b/edit/{{post.id}}"><img src="Client/images/glyphish/icons/icons-gray/187-pencil.png" width="15px" class="text-left" title="Edit" /></a>
 
-			<a href="mailto:?subject={{post.title}}&body={{currentURL + 'b/' + post.id}}" target="_blank"><img src="Client/images/glyphish/icons/icons-gray/287-at.png" width="15px" class="text-left" title="Email to" /></a>
+			<a href="mailto:?subject={{post.title}}&body={{currentURL + 'b/' + post.id}}" target="_blank"><img src="Client/images/glyphish/icons/icons-gray/287-at.png" width="15px" class="text-left" title="Email" /></a>
 
-			<a href="#b/{{post.id}}"><img src="Client/images/glyphish/xtras/xtras-gray/46-no.png" width="15px" class="text-left" title="Delete" /></a>
+			<a class="clickable" ng-click="deletePost(post.id);"><img src="Client/images/glyphish/xtras/xtras-gray/46-no.png" width="15px" class="text-left" title="Delete" /></a>
 		</span>
 	</div>
 	<p class="justify">

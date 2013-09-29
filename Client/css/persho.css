@@ -46,3 +46,7 @@ footer {
 	margin:0px;
 	padding:0px;
 }
+
+.clickable {
+	cursor: pointer;
+}
