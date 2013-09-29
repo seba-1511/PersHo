@@ -1,15 +1,13 @@
 * {
 	margin: 0px;
 	padding: 0px;
-}
-
-*, body {
-	text-align: center;
-	background: #333333 url(../images/background.png) top center repeat-y;
+	text-align:center;
 }
 
 body {
-	padding-top:50px;
+	text-align: center;
+	background: #333333 url(../images/background.png) top center repeat-y;
+	padding-top:0px;
 	display:inline-block;
 	width:700px;
 }
@@ -26,7 +24,6 @@ footer {
 	font-weight: bold;
 	display:inline-block;
 	bottom:10px;
-	position: absolute;
 }
 
 .half {
@@ -38,4 +35,14 @@ footer {
 
 .right {
 	float:right;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.smaller {
+	font-size: 10px;
+	margin:0px;
+	padding:0px;
 }

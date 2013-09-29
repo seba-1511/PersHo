@@ -1,19 +1,15 @@
 var blogConfig = function($routeProvider) {
 	$routeProvider
 	.when('/', {
-		templateUrl: 'Client/templates/blog/main.html',
+		templateUrl: 'Client/templates/blog/posts.html',
 		controller: 'AllPosts'
 	})
 	.when('/b/:postId', {
-		template: '',
+		templateUrl: 'Client/templates/blog/fullPost.html',
 		controller: 'OnePost'
 	})
-	.when('/b/del/:postId', {
-		template: '',
-		controller: 'DelPost'
-	})
 	.when('/b/add/:postId', {
-		template: '',
+		templateUrl: '',
 		controller: 'AddPost'
 	});
 };
