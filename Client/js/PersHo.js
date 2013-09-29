@@ -8,8 +8,12 @@ var blogConfig = function($routeProvider) {
 		templateUrl: 'Client/templates/blog/fullPost.html',
 		controller: 'OnePost'
 	})
+	.when('/b/add', {
+		templateUrl: 'Client/templates/blog/editPost.html',
+		controller: 'AddPost'
+	})
 	.when('/b/add/:postId', {
-		templateUrl: '',
+		templateUrl: 'Client/templates/blog/editPost.html',
 		controller: 'AddPost'
 	});
 };

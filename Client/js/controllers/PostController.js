@@ -1,6 +1,6 @@
 blog.controller('AllPosts', function($scope, $location, $routeParams, PostModel) {
-	var posts = PostModel.getPosts();
 	var iter, previewLength;
+	var posts = PostModel.getPosts();
 	previewLength = 250;
 	for (iter in posts) {
 		if (posts[iter].content.length > previewLength) {
@@ -25,3 +25,20 @@ blog.controller('OnePost', function($scope, $location, $routeParams, PostModel) 
 	$scope.post = post;
 });
 
+blog.controller('AddPost', function($scope, $location, $routeParams, PostModel) {
+	var post;
+	post = PostModel.getPost($routeParams.postId);
+
+	if (post) {
+		$scope.post = post;
+	}
+
+	$scope.sendPost = function() {
+		// var content, title, id;
+		// id = document.getElementById('id').value;
+		// title = document.getElementById('title').value;
+		// content = document.getElementById('content').value;
+		PostModel.addPost($scope.post.id, $scope.post.title, $scope.post.content);
+		$location.path('/');
+	};
+});
