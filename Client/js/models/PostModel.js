@@ -1,10 +1,23 @@
-blog.service('PostModel', function() {
+blog.service('PostModel', function($http) {
 	this.posts = false;
 	this.getPosts = function() {
 		/*
 		 * Solve problem of copying.
 		 */
 		 if (!this.posts) {
+		 	$http.get('http://localhost:8000/b/api/?format=json').then(function(response) {
+		 		alert(response);
+		 		console.log(response);
+		 	});
+		 	// $http.jsonp('http://localhost:8000/b/api/?format=json').success(function(status, response){
+		 	// 	console.log(status);
+		 	// 	console.log(response);
+		 	// 	alert(response);
+		 	// }).error(function(status, response) {
+		 	// 	alert('error');
+		 	// 	console.log(status);
+		 	// 	console.log(response);
+		 	// });
 		 	this.posts = JSON.parse('[{"id": 2, "title": "jQuery Ajax with very long title that goes on and on", "content": "Working with ajax is nice. Working with ajax is nice.Working with ajax is nice. Working with ajax is nice.Working with ajax is nice.Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice.", "date": "2013-09-24T22:35:10.656Z"}, {"id": 3, "title": "jQuery Ajax", "content": "Working with ajax is nice. Working with ajax is nice.Working with ajax is nice. Working with ajax is nice.Working with ajax is nice.Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice.", "date": "2013-09-24T22:35:24.392Z"}, {"id": 4, "title": "jQuery Ajax", "content": "Working with ajax is nice. Working with ajax is nice.Working with ajax is nice. Working with ajax is nice.Working with ajax is nice.Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. So REST and AJAX seems to be friends !", "date": "2013-09-24T22:36:26.077Z"}, {"id": 5, "title": "jQuery Ajax", "content": "Working with ajax is nice. Working with ajax is nice.Working with ajax is nice. Working with ajax is nice.Working with ajax is nice.Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. Working with ajax is nice. So REST and AJAX seems to be friends forever !", "date": "2013-09-24T22:45:38.476Z"}]');
 		 }
 		 return this.posts;
