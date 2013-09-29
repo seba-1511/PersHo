@@ -76,11 +76,11 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/website/static/'
+STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    CURRENT_DIR + '/website/static/',
+    CURRENT_DIR + '',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -120,7 +120,6 @@ ROOT_URLCONF = 'PersHo.urls'
 WSGI_APPLICATION = 'PersHo.wsgi.application'
 
 TEMPLATE_DIRS = (
-    CURRENT_DIR + '/website/templates',
     CURRENT_DIR + '/nanoblog/templates',
     CURRENT_DIR + '/nanolinks/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -139,7 +138,6 @@ INSTALLED_APPS = (
     'nanolinks',
     'nanoblog',
     'login',
-    'website',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

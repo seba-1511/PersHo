@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, include, url
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -15,11 +14,6 @@ urlpatterns = patterns(
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-
-    url(
-        r'^$',
-        include('website.urls')
-    ),
     url(
         r'^b/',
         include('nanoblog.urls')
@@ -33,7 +27,3 @@ urlpatterns = patterns(
         include('login.urls')
         )
 )
-
-# To serve static files. Only in dev mode, otherwise the webserver should
-# do that.
-urlpatterns += staticfiles_urlpatterns()
