@@ -1,4 +1,4 @@
-var pershoConfig = function($routeProvider) {
+var blogConfig = function($routeProvider) {
 	$routeProvider
 	.when('/', {
 		template: 'templates/blog/main.html',
@@ -18,4 +18,4 @@ var pershoConfig = function($routeProvider) {
 	});
 };
 
-var persho = angular.module('persho', []).config(pershoConfig);
+var blog = angular.module('blog', []).config(blogConfig);

@@ -7,3 +7,35 @@
 	text-align: center;
 	background: #333333 url(../images/background.png) top center repeat-y;
 }
+
+body {
+	padding-top:50px;
+	display:inline-block;
+	width:700px;
+}
+
+section{
+	display:block;
+	text-align: center;
+	margin:auto;
+}
+
+footer {
+	text-align:center;
+	font-size: 10px;
+	font-weight: bold;
+	display:inline-block;
+	bottom:10px;
+	position: absolute;
+}
+
+.half {
+	display: inline-block;
+	text-align:justify;
+	width:340px;
+	margin:5px;
+}
+
+.right {
+	float:right;
+}
