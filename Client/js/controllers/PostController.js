@@ -34,10 +34,6 @@ blog.controller('AddPost', function($scope, $location, $routeParams, PostModel) 
 	}
 
 	$scope.sendPost = function() {
-		// var content, title, id;
-		// id = document.getElementById('id').value;
-		// title = document.getElementById('title').value;
-		// content = document.getElementById('content').value;
 		PostModel.addPost($scope.post.id, $scope.post.title, $scope.post.content);
 		$location.path('/');
 	};
