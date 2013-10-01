@@ -18,7 +18,15 @@ var blogConfig = function($routeProvider) {
 	});
 };
 
-var blog = angular.module('blog', []).config(blogConfig);
+var blog = angular.module('blog', ['ngResource'])
+	.factory('Post', function($resource) {
+		return $resource(
+		'/b/api/:postId?format=json',
+		{},
+		{}
+		);
+	})
+	.config(blogConfig);
 
 var linksConfig = function($routeProvider) {
 
