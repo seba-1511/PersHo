@@ -8,10 +8,6 @@ var blogConfig = function($routeProvider) {
 		templateUrl: 'Client/templates/blog/fullPost.html',
 		controller: 'OnePost'
 	})
-	.when('/b/add', {
-		templateUrl: 'Client/templates/blog/editPost.html',
-		controller: 'AddPost'
-	})
 	.when('/b/add/:postId', {
 		templateUrl: 'Client/templates/blog/editPost.html',
 		controller: 'AddPost'
@@ -23,7 +19,9 @@ var blog = angular.module('blog', ['ngResource'])
 		return $resource(
 		'/b/api/:postId?format=json',
 		{},
-		{}
+		{
+			'update': {method:'PUT'}
+		}
 		);
 	})
 	.config(blogConfig);
