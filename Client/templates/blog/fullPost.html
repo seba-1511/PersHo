@@ -5,6 +5,6 @@
 		{{post.date}}
 	</p>
 	<p class="justify">
-		{{post.content}}
+        <span ng-bind-html-unsafe="post.content"></span>
 	</p>
 </div>

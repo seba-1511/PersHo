@@ -3,8 +3,8 @@ blog.service('PostModel', function(Post) {
 		return Post.query();
 	};
 
-	this.getPost = function(id) {
-		return Post.get({postId: id});
+	this.getPost = function(id, callback) {
+		return Post.get({postId: id}, callback);
 	};
 
 	this.deletePost = function(id) {
