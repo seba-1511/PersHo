@@ -3,7 +3,7 @@
 
 import os
 
-CURRENT_DIR = os.path.abspath(os.curdir)
+CURRENT_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -21,7 +21,7 @@ DATABASES = {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.sqlite3',
         # Or path to database file if using sqlite3.
-        'NAME': CURRENT_DIR + 'database.sql',
+        'NAME': CURRENT_DIR + '/database.sql',
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
