@@ -27,7 +27,6 @@ blog.controller('OnePost', function($scope, $location, $routeParams, PostModel) 
 });
 
 blog.controller('AddPost', function($scope, $location, $routeParams, PostModel, Post) {
-    debugger;
 	if ($routeParams.postId != '0') {
 		var post;
 		post = PostModel.getPost($routeParams.postId, function(post) {
