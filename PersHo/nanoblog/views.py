@@ -1,6 +1,5 @@
 #-*- coding: utf-8 -*-
 
-
 from django.http import HttpResponse, Http404
 from django.core.serializers import serialize
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView

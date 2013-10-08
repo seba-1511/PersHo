@@ -1,0 +1,8 @@
+<div ng-mouseover="showAddLinkForm();" ng-mouseout="showAddLinkButton();">
+    <p ng-hide="showForm" class="btn btn-block btn-primary animate-show">Hey ! You'd like to add a link ?</p>
+    <form ng-submit="addLink();" id="addLinkForm" ng-show="showForm" class="animate-show" >
+        <input class="form-control input-sm" type="link" name="link" id="link" placeholder="http://..." ng-model="link.link" />
+        <input type="submit" value="submit" id="submit" style="visibility:hidden;height:1px;" />
+        <input class="form-control input-sm" type="text" name="name" id="name" placeholder="Name" ng-model="link.name" />
+    </form>
+</div>

@@ -32,10 +32,6 @@ var blog = angular.module('blog', ['ngResource'])
 
 var linksConfig = function($routeProvider) {
     $routeProvider
-    .when('/:whatever', {
-        templateUrl: 'Client/templates/links/allLinks.html',
-        controller: 'AllLinks',
-    })
     .when('/', {
         templateUrl: 'Client/templates/links/allLinks.html',
         controller: 'AllLinks',

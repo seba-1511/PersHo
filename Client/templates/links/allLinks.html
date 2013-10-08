@@ -1,0 +1,9 @@
+<p class="add-link-button">Add new Link</p>
+<br />
+<div class="divLinkList" ng-repeat="link in links | orderBy:'date':true">
+    <span class="btn btn-default btn-xs btn-block">
+        <span ng-click="deleteLink(link.id);" class="pull-left closeCross"><img src="Client/images/glyphish/xtras/xtras-gray/60-x.png" title="Delete" width="10px" /></span>
+        <a href="{{link.link}}" style="padding-right:50px;padding-left:50px;">{{link.name}}&nbsp;&nbsp;&nbsp;</a>
+        <a href="{{link.link}}" target="_blank" class="pull-right expandWindow"><img src="Client/images/glyphish/xtras/xtras-gray/25-circle-northeast.png" title="Open in this tab" width="12px" /></a>
+    </span>
+</div>
