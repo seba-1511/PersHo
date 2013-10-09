@@ -11,6 +11,10 @@ var blogConfig = function($routeProvider) {
 	.when('/b/add/:postId', {
 		templateUrl: 'Client/templates/blog/editPost.html',
 		controller: 'AddPost'
+	})
+    .otherwise({
+    	templateUrl: 'Client/templates/blog/posts.html',
+		controller: 'AllPosts'
 	});
 };
 
@@ -27,7 +31,25 @@ var blog = angular.module('blog', ['ngResource'])
 	.config(blogConfig);
 
 var linksConfig = function($routeProvider) {
-
+    $routeProvider
+    .when('/', {
+        templateUrl: 'Client/templates/links/allLinks.html',
+        controller: 'AllLinks',
+    })
+    .otherwise({
+        templateUrl: 'Client/templates/links/allLinks.html',
+        controller: 'AllLinks',
+    });
 };
 
-var links = angular.module('links', []).config(linksConfig);
+var linksResource = function($resource) {
+    return $resource(
+        '/l/api/:linkId?format=json',
+        {},
+        {'update': {method: 'PUT'}}
+    );
+};
+
+var links = angular.module('links', ['ngResource'])
+    .factory('Links', linksResource)
+    .config(linksConfig);

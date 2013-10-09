@@ -24,7 +24,7 @@ urlpatterns = patterns(
     ),
 
     url(
-        regex=r'^api/(?P<post_id>[-\w]+)/$',
+        regex=r'^api/(?P<pk>[-\w]+)/$',
         view=views.LinkReadUpdateDeleteView.as_view(),
         name='links_rest_api',
     ),

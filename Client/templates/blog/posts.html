@@ -1,12 +1,12 @@
-<a type="button" class="btn btn-block btn-primary" href="#/b/add/0">Add Post</a>
+<a type="button" class="btn btn-block btn-primary" ng-href="/#/b/add/0">Need a quick note ? Click here !</a>
 <div ng-repeat="post in posts | orderBy:'date':true ">
-	<h3 class="justify"><a href="#/b/{{post.id}}">{{post.title}}</a></h3>
+	<h3 class="justify"><a ng-href="/#/b/{{post.id}}">{{post.title}}</a></h3>
 	<div class="smaller text-left">
 		<span class="smaller right">{{post.date}}</span>
 		<span>
-			<a href="#b/{{post.id}}"><img src="Client/images/glyphish/icons/icons-gray/06-magnify.png" width="15px" class="text-left" title="See more" /></a>
+			<a ng-href="/#b/{{post.id}}"><img src="Client/images/glyphish/icons/icons-gray/06-magnify.png" width="15px" class="text-left" title="See more" /></a>
 
-			<a href="#b/add/{{post.id}}"><img src="Client/images/glyphish/icons/icons-gray/187-pencil.png" width="15px" class="text-left" title="Edit" /></a>
+			<a ng-href="/#b/add/{{post.id}}"><img src="Client/images/glyphish/icons/icons-gray/187-pencil.png" width="15px" class="text-left" title="Edit" /></a>
 
 			<a href="mailto:?subject={{post.title}}&body={{currentURL + 'b/' + post.id}}" target="_blank"><img src="Client/images/glyphish/icons/icons-gray/287-at.png" width="15px" class="text-left" title="Email" /></a>
 
