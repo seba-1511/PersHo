@@ -1,44 +1,42 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-			<meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-			<title>PersHo | Notes and Links at hands</title>
-			<link rel="stylesheet" href="Client/css/bootstrap.min.css" />
-			<link rel="stylesheet" href="Client/css/persho.css" />
-	</head>
-	<body>
-		<section class="col-md-9 col-sm-12 col-xs-12 col-lg-9 col-md-offset-2 col-sm-offset-2 col-lg-offset-4">
-        	<div id="linksApp" class="col-md-4 col-sm-10 col-xs-12 col-lg-4 half" ng-view>
-			</div>
-            <div id="blogApp" class="col-md-4 col-sm-10 col-xs-12 col-lg-4 half" ng-view>
-            </div>
-		</section>
-		<footer class="row col-md-12 col-sm-12 col-xs-12 col-lg-offset-2">
-			<p>
-				<a href="http://seba-1511.github.io/PersHo/" target="_blank" title="Homepage of PersHo">PersHo</a>, the personnal homepage for everybody.
-			</p>
-		</footer>
-		<script src="Client/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="Client/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="Client/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
-    	<script src="Client/js/angular-resource.min.js" type="text/javascript" charset="utf-8"></script>
-		<!-- Apps -->
-		<script src="Client/js/PersHo.js" type="text/javascript" charset="utf-8"></script>
-		<!-- Models -->
-		<script src="Client/js/models/LinkModel.js" type="text/javascript" charset="utf-8"></script>
-		<script src="Client/js/models/PostModel.js" type="text/javascript" charset="utf-8"></script>
-		<!-- Controllers -->
-		<script src="Client/js/controllers/LinkController.js" type="text/javascript" charset="utf-8"></script>
-		<script src="Client/js/controllers/PostController.js" type="text/javascript" charset="utf-8"></script>
-        <!-- Directives -->
-        <script src="Client/js/directives/blog.js" type="text/javascript" charset="utf-8"></script>
-        <script src="Client/js/directives/links.js" type="text/javascript" charset="utf-8"></script>
-        <!-- Bootstraping Apps (Launching them) -->
-        <script type="text/javascript" charset="utf-8">
-            angular.bootstrap(document.getElementById('blogApp'), ['blog']);
-            angular.bootstrap(document.getElementById('linksApp'), ['links']);
-        </script>
-	</body>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>PersHo | Notes and Links at hands</title>
+	<link rel="stylesheet" href="Client/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="Client/css/persho.css" />
+</head>
+<body>
+	<section class="col-md-9 col-sm-12 col-xs-12 col-lg-9 col-md-offset-2 col-sm-offset-2 col-lg-offset-4">
+		<div id="linksApp" class="col-md-4 col-sm-10 col-xs-12 col-lg-4 half" ng-view>
+		</div>
+		<div id="blogApp" class="col-md-4 col-sm-10 col-xs-12 col-lg-4 half" ng-view>
+		</div>
+	</section>
+	<footer class="row col-md-12 col-sm-12 col-xs-12 col-lg-offset-2">
+		<p>
+			<a href="http://seba-1511.github.io/PersHo/" target="_blank" title="Homepage of PersHo">PersHo</a>, the personnal homepage for everybody.
+		</p>
+	</footer>
+	<script src="Client/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="Client/js/angular-resource.min.js" type="text/javascript" charset="utf-8"></script>
+	<!-- Apps -->
+	<script src="Client/js/PersHo.js" type="text/javascript" charset="utf-8"></script>
+	<!-- Models -->
+	<script src="Client/js/models/LinkModel.js" type="text/javascript" charset="utf-8"></script>
+	<script src="Client/js/models/PostModel.js" type="text/javascript" charset="utf-8"></script>
+	<!-- Controllers -->
+	<script src="Client/js/controllers/LinkController.js" type="text/javascript" charset="utf-8"></script>
+	<script src="Client/js/controllers/PostController.js" type="text/javascript" charset="utf-8"></script>
+	<!-- Directives -->
+	<script src="Client/js/directives/blog.js" type="text/javascript" charset="utf-8"></script>
+	<script src="Client/js/directives/links.js" type="text/javascript" charset="utf-8"></script>
+	<!-- Bootstraping Apps (Launching them) -->
+	<script type="text/javascript" charset="utf-8">
+	angular.bootstrap(document.getElementById('blogApp'), ['blog']);
+	angular.bootstrap(document.getElementById('linksApp'), ['links']);
+	</script>
+</body>
 </html>
